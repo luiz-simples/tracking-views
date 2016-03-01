@@ -24,7 +24,7 @@ class ContactController < ApplicationController
       return redirect_to :fail, :flash => { :alert => erros }
     end
 
-    contact.save!
+    contact.save
 
     redirect_to :success
   end

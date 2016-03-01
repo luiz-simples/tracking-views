@@ -1,0 +1,26 @@
+<div class="blog-header">
+  <h1 class="blog-title">Activity#Page</h1>
+  <p class="lead blog-description">Find me in app/views/activity/index.html.erb</p>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 blog-main">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Reference</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr class="activity">
+            <th scope="row"><%= contact.name %></th>
+            <td><%= contact.reference %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
