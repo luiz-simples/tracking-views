@@ -11,6 +11,11 @@ class ContactController < ApplicationController
     render 'contact/success'
   end
 
+  def find
+    @contacts = Contact.all
+    render 'contact/contacts'
+  end
+
   def new
     contact = Contact.new contact_params
 
@@ -18,6 +23,8 @@ class ContactController < ApplicationController
       erros = contact.errors.full_messages.join ', '
       return redirect_to :fail, :flash => { :alert => erros }
     end
+
+    contact.save!
 
     redirect_to :success
   end

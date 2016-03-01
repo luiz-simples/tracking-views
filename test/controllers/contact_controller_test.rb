@@ -6,6 +6,11 @@ class ContactControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get contacts page" do
+    get :find
+    assert_response :success
+  end
+
   test "should view main header" do
     get :index
     assert_select "h1", "Contact#Page"
