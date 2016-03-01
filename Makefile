@@ -2,7 +2,7 @@ USER_DEVELOPMENT=rd
 IMAGE_DEVELOPMENT=rd-development
 
 build-image:
-	docker build --force-rm --rm -f ./docker/DockerDevelopment -t $(IMAGE_DEVELOPMENT) .
+	docker build --force-rm --rm -t $(IMAGE_DEVELOPMENT) .
 
 run-development:
 	docker run \

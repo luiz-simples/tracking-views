@@ -4,14 +4,14 @@ MAINTAINER Luiz Amorim <luiz.simples@gmail.com> (https://github.com/luiz-simples
 RUN echo "America/Sao_Paulo" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
-#RUN apt-get update && apt-get upgrade -qqy --force-yes && apt-get dist-upgrade -qqy --force-yes
-#RUN apt-get autoremove -qqy --force-yes && apt-get autoclean -qqy --force-yes && apt-get clean && apt-get update
+RUN apt-get update && apt-get upgrade -qqy --force-yes && apt-get dist-upgrade -qqy --force-yes
+RUN apt-get autoremove -qqy --force-yes && apt-get autoclean -qqy --force-yes && apt-get clean && apt-get update
 
 RUN echo "LANGUAGE=pt_BR.UTF-8" >> /etc/environment
 RUN echo "LANG=pt_BR.UTF-8"     >> /etc/environment
 RUN echo "LC_ALL=pt_BR.UTF-8"   >> /etc/environment
-#RUN locale-gen pt_BR.UTF-8
-#RUN dpkg-reconfigure locales
+RUN locale-gen pt_BR.UTF-8
+RUN dpkg-reconfigure locales
 
 RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     useradd -u 5001 -G users,sudo -d /rd --shell /bin/bash -m rd && \
