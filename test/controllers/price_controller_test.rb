@@ -5,4 +5,9 @@ class PriceControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+
+  test "should view main header" do
+    get :index
+    assert_select "h1", "Price#Page"
+  end
 end
