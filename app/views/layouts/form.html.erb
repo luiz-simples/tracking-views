@@ -1,12 +1,12 @@
 <%= form_tag("/contact", method: "post") do %>
-<%= label_tag(:name, "Name") %>
-<%= text_field_tag(:name) %>
+  <%= label_tag(:name, "Name") %>
+  <%= text_field_tag(:name) %>
 
-<%= label_tag(:email, "Email") %>
-<%= text_field_tag(:email) %>
+  <%= label_tag(:email, "Email") %>
+  <%= email_field_tag(:email) %>
 
-<%= label_tag(:message, "Message") %>
-<%= text_field_tag(:message) %>
+  <%= label_tag(:message, "Message") %>
+  <%= text_area_tag(:message) %>
 
-<%= submit_tag("Send") %>
+  <%= submit_tag("Send") %>
 <% end %>
