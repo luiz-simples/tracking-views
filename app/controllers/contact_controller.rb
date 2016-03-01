@@ -3,25 +3,28 @@ class ContactController < ApplicationController
     render 'contact/index'
   end
 
-  def new
-    contact = Contact.new contact_params
-
-    if contact.invalid?
-      erros = contact.errors.full_messages.join(', ')
-      flash[:alert] = erros
-      return index
-    end
-
-    redirect_to :success
+  def fail
+    render 'contact/fail'
   end
 
   def success
     render 'contact/success'
   end
 
+  def new
+    contact = Contact.new contact_params
+
+    if contact.invalid?
+      erros = contact.errors.full_messages.join ', '
+      return redirect_to :fail, :flash => { :alert => erros }
+    end
+
+    redirect_to :success
+  end
+
   private
 
   def contact_params
-    params.permit(:name, :email, :message)
+    params.permit :name, :email, :message
   end
 end

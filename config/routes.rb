@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   post 'contact' => 'contact#new'
   get  'contact' => 'contact#index'
-  get  'success' => 'contact#success'
+  get  'contact/success' => 'contact#success', as: 'success'
+  get  'contact/we-will-try' => 'contact#fail', as: 'fail'
 end
