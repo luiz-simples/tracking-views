@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LoadFlowsTest < ActionDispatch::IntegrationTest
+class LeadFlowsTest < ActionDispatch::IntegrationTest
   def send_contact_flow(contact)
     get "/contact"
     assert_response :success
