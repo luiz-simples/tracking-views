@@ -10,4 +10,9 @@ class ContactControllerTest < ActionController::TestCase
     get :index
     assert_select "h1", "Contact#Page"
   end
+
+  test "should have form with field name" do
+    get :index
+    assert_select "form>input[name=\"name\"]", 1
+  end
 end
