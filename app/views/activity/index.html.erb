@@ -14,10 +14,10 @@
       </thead>
 
       <tbody>
-        <% @contacts.each do |contact| %>
+        <% @activities.each do |activity| %>
           <tr class="activity">
-            <th scope="row"><%= contact.name %></th>
-            <td><%= contact.reference %></td>
+            <th scope="row"><%= activity.name %></th>
+            <td><%= activity.reference %></td>
           </tr>
         <% end %>
       </tbody>

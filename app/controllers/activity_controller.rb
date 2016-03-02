@@ -6,7 +6,7 @@ class ActivityController < ApplicationController
   end
 
   def find
-    @contacts = Activity.all
+    @activities = Activity.where(cid: params[:cid]).order(id: :desc).all
     render 'activity/index'
   end
 

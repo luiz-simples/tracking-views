@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get  'contact/we-will-try' => 'contact#fail', as: 'fail'
 
   post 'actions' => 'activity#new'
-  get 'actions/:email' => 'activity#find'
+  get 'actions/:cid' => 'activity#find'
 end
