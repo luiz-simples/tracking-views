@@ -11,6 +11,7 @@
           <th>Email</th>
           <th>Name</th>
           <th>Message</th>
+          <th></th>
         </tr>
       </thead>
 
@@ -20,6 +21,7 @@
             <th scope="row"><%= contact.email %></th>
             <td><%= contact.name %></td>
             <td><%= contact.message %></td>
+            <td><%= link_to "Show Activities", activities_path(contact.cid) %></td>
           </tr>
         <% end %>
       </tbody>

@@ -20,8 +20,8 @@ class ContactController < ApplicationController
     contact = Contact.new contact_params
 
     if contact.invalid?
-      erros = contact.errors.full_messages.join ', '
-      return redirect_to :fail, :flash => { :alert => erros }
+      errors = contact.errors.full_messages.join ', '
+      return redirect_to :fail, :flash => { :alert => errors }
     end
 
     contact.save
@@ -32,6 +32,9 @@ class ContactController < ApplicationController
   private
 
   def contact_params
-    params.permit :name, :email, :message, :cid
+    session[:id] ||= SecureRandom.uuid
+    contact = params.permit :name, :email, :message
+    contact[:cid] = session[:id]
+    contact
   end
 end

@@ -1,8 +1,14 @@
 class ActivityController < ApplicationController
   def new
     activity = Activity.new activity_params
-    render json: {}, status: 406 if activity.invalid?
-    render json: activity.save, status: 202
+
+    if activity.invalid?
+      errors = activity.errors.full_messages.join ', '
+      return render json: errors, status: 406
+    end
+
+    activity.save
+    render json: activity, status: 202
   end
 
   def find
@@ -13,6 +19,9 @@ class ActivityController < ApplicationController
   private
 
   def activity_params
-    params.permit :name, :cid, :reference
+    session[:id] ||= SecureRandom.uuid
+    activity = params.permit :name, :reference
+    activity[:cid] = session[:id]
+    activity
   end
 end

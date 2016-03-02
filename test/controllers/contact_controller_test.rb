@@ -11,7 +11,7 @@ class ContactControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should view main header" do
+  test "should view main header and form" do
     get :index
     assert_select "h1", "Contact#Page"
     assert_select "form[action=\"/contact\"]", 1
