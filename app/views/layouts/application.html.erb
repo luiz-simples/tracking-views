@@ -8,6 +8,14 @@
   </head>
 
   <body>
+    <script>
+      (function(action, reference){
+        var w=window,d=document,a=d.createElement('script'),m=d.getElementsByTagName('script')[0];
+        a.async=1;a.src = '//tracking-server.herokuapp.com/release/tracking-analytics.js';m.parentNode.insertBefore(a,m);
+        a.onload=function(){trackingAnalytics.sendActivity(action, reference)}
+      })('pageview', window.location.pathname);
+    </script>
+
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
