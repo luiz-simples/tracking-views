@@ -1,4 +1,18 @@
-<%= form_tag("/contact", method: "post") do %>
+<div class="alert alert-danger error-message" style="display:none" role="alert">
+  <strong>Oh snap!</strong>
+  <span class="msg">Change a few things up and try submitting again.</span>
+</div>
+
+<div class="alert alert-success success-message" style="display:none" role="alert">
+  <strong>Well done!</strong>
+  <span class="msg">You successfully send message. Congratulations!</span>
+</div>
+
+<div class="alert alert-warning loading-message" style="display:none" role="alert">
+  <strong>Wait!</strong> Wait a little bit
+</div>
+
+<%= form_tag(nil, class: 'tracking-server') do %>
   <div class="form-group">
     <%= label_tag(:name, "Name") %>
     <%= text_field_tag(:name, nil, class: 'form-control') %>
@@ -16,5 +30,6 @@
 
   <%= submit_tag("Send", class: 'btn btn-default') %>
 <% end %>
+
 <br />
 <br />
