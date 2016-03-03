@@ -5,17 +5,23 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script>
+      (function(act,ref){
+        var s='script',w=window,d=document,a=d.createElement(s),m=d.getElementsByTagName(s)[0];a.async=1;
+        a.src='//tracking-server.herokuapp.com/release/tracking-analytics.js';m.parentNode.insertBefore(a,m);
+        a.onload=function(){trackingAnalytics.sendActivity(act,ref)}
+      })('pageview', window.location.pathname);
+    </script>
   </head>
 
   <body>
-    <script>
-      (function(action, reference){
-        var w=window,d=document,a=d.createElement('script'),m=d.getElementsByTagName('script')[0];
-        a.async=1;a.src = '//tracking-server.herokuapp.com/release/tracking-analytics.js';m.parentNode.insertBefore(a,m);
-        a.onload=function(){trackingAnalytics.sendActivity(action, reference)}
-      })('pageview', window.location.pathname);
-    </script>
-
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">

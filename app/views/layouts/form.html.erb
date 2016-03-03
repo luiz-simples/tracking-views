@@ -1,12 +1,20 @@
 <%= form_tag("/contact", method: "post") do %>
-  <%= label_tag(:name, "Name") %>
-  <%= text_field_tag(:name) %>
+  <div class="form-group">
+    <%= label_tag(:name, "Name") %>
+    <%= text_field_tag(:name, nil, class: 'form-control') %>
+  </div>
 
-  <%= label_tag(:email, "Email") %>
-  <%= email_field_tag(:email) %>
+  <div class="form-group">
+    <%= label_tag(:email, "Email") %>
+    <%= email_field_tag(:email, nil, class: 'form-control') %>
+  </div>
 
-  <%= label_tag(:message, "Message") %>
-  <%= text_area_tag(:message) %>
+  <div class="form-group">
+    <%= label_tag(:message, "Message") %>
+    <%= text_area_tag(:message, nil, class: 'form-control') %>
+  </div>
 
-  <%= submit_tag("Send") %>
+  <%= submit_tag("Send", class: 'btn btn-default') %>
 <% end %>
+<br />
+<br />
