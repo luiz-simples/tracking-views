@@ -1,4 +1,4 @@
-$(document).ready ->
+sendContact = ->
   errorMessage   = $ 'div.error-message'
   successMessage = $ 'div.success-message'
   loadingMessage = $ 'div.loading-message'
@@ -31,20 +31,25 @@ $(document).ready ->
     loadingMessage.hide 'fast'
     return
 
-  $("form.tracking-server").off('submit').on "submit", (e)->
-    e.preventDefault()
-    showLoading()
-    obj = {}
-    form = $ this
+  showLoading()
+  obj = {}
+  form = $ 'form.tracking-server'
 
-    form.serializeArray().forEach (attr)->
-      obj[attr.name] = attr.value
-      return
+  form.serializeArray().forEach (attr)->
+    obj[attr.name] = attr.value
+    return
 
-    trackingAnalytics.sendContact obj.name, obj.email, obj.message, (messageError, result)->
-      hideLoading()
-      return showErrorMessage(messageError) if messageError
-      showSuccessMessage()
-      return
+  trackingAnalytics.sendContact obj.name, obj.email, obj.message, (messageError, result)->
+    hideLoading()
+    return showErrorMessage(messageError) if messageError
+    showSuccessMessage()
+    return
+  false
 
-    false
+loaded = ->
+  document.addEventListener "submit", (event) ->
+    return if !$(event.target).hasClass 'tracking-server'
+    event.preventDefault()
+    sendContact()
+
+window.addEventListener "load", loaded, false

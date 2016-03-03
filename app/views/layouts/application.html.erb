@@ -2,9 +2,6 @@
 <html>
   <head>
     <title>Tracking Pages</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
 
     <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 
@@ -19,6 +16,10 @@
         a.onload=function(){trackingAnalytics.sendActivity(act,ref)}
       })('pageview', window.location.pathname);
     </script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
