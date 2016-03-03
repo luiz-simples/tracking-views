@@ -1,5 +1,10 @@
-# Tracking Views
+# tracking-pages
+Tracking Pages
 
+[DEMO](https://tracking-pages.herokuapp.com/)
+
+
+## How to contribute?
 
 Environment with:
 
@@ -7,7 +12,7 @@ Environment with:
 * [RAILS 4.2](http://guides.rubyonrails.org/v4.2/)
 * [DOCKER](https://docs.docker.com/)
 * [DEBIAN](https://www.debian.org/releases/stable/)
-* [MAKE](http://www.gnu.org/software/make/manual/make.html#Running)
+
 
 Docker install (only linux environment):
 
@@ -16,7 +21,16 @@ $ curl -sSL https://get.docker.com/ | sh
 ```
 
 
-Make tasks of environment
+Make tasks of environment (only docker environment)
 
 * Build docker image - ```$ make build-image```
-* Run shell with enviroment - ```$ make run-development```
+* Build container (only first build) - ```$ make build-container```
+* Attach container (after first build) - ```$ make attach-container```
+
+
+First steps after environment success (Ruby 2.2)
+```sh
+rd@dev/rails$ bundle install
+rd@dev/rails$ rake test
+rd@dev/rails$ puma -p 3000
+```
