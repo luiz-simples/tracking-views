@@ -4,6 +4,7 @@ gem 'rails', '4.2.5.1'
 
 gem 'puma'
 gem 'httparty'
+gem 'tracking-api'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -2,7 +2,8 @@
 Tracking Pages
 
 [DEMO](https://tracking-pages.herokuapp.com/)
-
+[SERVER](https://tracking-server.herokuapp.com/)
+[GEM](https://rubygems.org/gems/tracking-api)
 
 ## How to contribute?
 
@@ -28,7 +29,7 @@ Make tasks of environment (only docker environment)
 * Attach container (after first build) - ```$ make attach-container```
 
 
-First steps after environment success (Ruby 2.2)
+First steps after environment success (Ruby 2.2, with or without docker)
 ```sh
 rd@dev/rails$ bundle install
 rd@dev/rails$ rake test
