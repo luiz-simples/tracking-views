@@ -1,9 +1,10 @@
-# tracking-pages
-Tracking Pages
+# tracking-views
+Tracking Views
 
-[DEMO](https://tracking-pages.herokuapp.com/)
-[SERVER](https://tracking-server.herokuapp.com/)
-[GEM](https://rubygems.org/gems/tracking-api)
+* [DEMO](https://tracking-pages.herokuapp.com/)
+* [SERVER](https://tracking-server.herokuapp.com/)
+* [GEM](https://rubygems.org/gems/tracking-api)
+
 
 ## How to contribute?
 
