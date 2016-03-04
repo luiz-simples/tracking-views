@@ -1,0 +1,27 @@
+<div class="blog-header">
+  <h1 class="blog-title">Activities#Page</h1>
+  <p class="lead blog-description">Find me in app/views/contact/activities.html.erb</p>
+</div>
+
+<div class="row">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>Activity</th>
+          <th>Date Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @activities.each do |activity| %>
+          <tr>
+            <th scope="row"><%= activity["reference"] %></th>
+            <td><%= activity["name"] %></td>
+            <td><%= activity["dthr"] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

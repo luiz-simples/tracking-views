@@ -1,0 +1,7 @@
+<script>
+  (function(act,ref){
+    var s='script',w=window,d=document,a=d.createElement(s),m=d.getElementsByTagName(s)[0];a.async=1;
+    a.src='//tracking-server.herokuapp.com/release/tracking-analytics.js';m.parentNode.insertBefore(a,m);
+    a.onload=function(){trackingAnalytics.sendActivity(act,ref)}
+  })('pageview', window.location.pathname);
+</script>
