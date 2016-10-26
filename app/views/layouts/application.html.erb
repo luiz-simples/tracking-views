@@ -25,43 +25,9 @@
     </script>
 
     <script>
-      (function (w, p, load) {
-        if (w === p) return load()
-        var l = setTimeout(load, 10000);
-
-        w.addEventListener('message', function(e) {
-          console.log("---- addEventListener" + e.data);
-
-          if (e.data === 'eltracker:handshake:app') {
-            console.log('SEND eltracker:handshake:project')
-            p.postMessage('eltracker:handshake:project', '*');
-          }
-
-          if (e.data === 'eltracker:handshake:loaded') {
-             clearTimeout(l);
-             var element = load(true);
-
-             element.onload = function functionName() {
-               console.log('SEND eltracker:handshake:ready');
-               p.postMessage('eltracker:handshake:ready', '*');
-             }
-          }
-        }, false);
-
-      })(window, window.parent, function (editor) {
-       console.log(editor ? 'LOADING EDITOR' : 'LOADING PRODUCTION')
-
-        var e = document.createElement('script');
-        e.defer = true;
-        e.type = 'text/javascript';
-        e.async = true;
-        e.src =  '//eltracker.dev/' + (editor ? 'project/cdn/editor/fcb73f05-11e0-451b-a02a-5f91b5354334' : 'project/cdn/fcb73f05-11e0-451b-a02a-5f91b5354334');
-        var s = document.getElementsByTagName('script')[0];
-        return s.parentNode.insertBefore(e, s);
-      })
-
+      var ElTracker=[];(function(){var h='elstage-eltracker.com';var e=document.createElement('script');var p=window===window.parent;if(!p){var r=document.createElement('a');r.href=document.referrer;p=r.hostname.indexOf(h)===-1&&JSON.parse(sessionStorage.getItem('eltracker:editor'))===false;}sessionStorage.setItem('eltracker:editor', !p);e.defer=true;e.type='text/javascript';e.async=true;e.src='//'+h+'/'+(p?"project/cdn/bc2f58b6-3deb-4cdb-a196-34ce41a295d1":"project/cdn/editor/bc2f58b6-3deb-4cdb-a196-34ce41a295d1");var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(e,s);})();
     </script>
-
+  
   </head>
 
   <body>
